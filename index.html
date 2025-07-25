@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="landing.css">
+  <title>1.2 base</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+
+  <div class="LoadingScreen">
+    <div class="loading-content">
+      <div class="loading-content-inner">Redirecting to our Landing page.</div>
+    </div>
+  </div>
+
+
+
+
+  <div class="landing">
+    <div class="landing-extras"></div>
+    <div class="landing-content">
+      <div class="landing-content-inner code-red-title" style="color: rgba(217, 0, 0, 0.741);">"CODE RED"</div>
+      <div class="landing-content-sub">Soviet Russia, 1976</div>
+    </div>
+
+  </div>
+  </div>
+  </div>
+
+  <!-- adds menu bar for users to go to other pages -->
+  <div class="menu-corner">
+    <div class="background" id="menuButton">
+      <div class="menu__icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-tooltip">Menu</div>
+    </div>
+  </div>
+  <nav class="side-nav" id="sideNav">
+    <ul>
+      <li><a href="Index.html"><i class="fas fa-house"></i> Index</a></li>
+      <li><a href="Trailler page.html"><i class="fas fa-film"></i> Trailer</a></li>
+      <li><a href="aboutus.html"><i class="fas fa-users"></i> About</a></li>
+      <li><a href="pricing.html"><i class="fas fa-tags"></i> Pricing</a></li>
+      <li><a href="info page.html"><i class="fas fa-circle-info"></i> Info</a></li>
+    </ul>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <script>
+    function wrapLetters(selector, delayIncrement = 0.3) {
+      const el = document.querySelector(selector);
+      if (!el) return;
+      const text = el.textContent;
+      el.innerHTML = '';
+      [...text].forEach((char, index) => {
+        const span = document.createElement('span');
+        span.textContent = char;
+        if (char === ' ') {
+          span.classList.add('space');
+        }
+        const floatDelay = (index * delayIncrement).toFixed(2);
+        span.style.animation = `flicker 3s infinite ease-in-out 0s, floatSingle 4.5s infinite cubic-bezier(0.4, 0, 0.2, 1) ${floatDelay}s`;
+        el.appendChild(span);
+      });
+    }
+
+
+    wrapLetters('.landing-content-inner');
+    wrapLetters('.landing-content-sub');
+
+
+
+
+    const currentPage = window.location.pathname.split('/').pop();
+    const loadingScreen = document.querySelector('.LoadingScreen');
+    const loadingContent = document.querySelector('.loading-content-inner');
+
+
+    if (document.referrer === '' || !document.referrer.includes(currentPage)) {
+      loadingScreen.style.display = 'flex';
+    } else {
+      loadingScreen.style.display = 'none';
+    }
+
+    // Loading screen 
+    window.addEventListener('load', () => {
+      if (loadingScreen.style.display === 'flex') {
+        setTimeout(() => {
+          loadingScreen.style.opacity = '0';
+          setTimeout(() => {
+            loadingScreen.style.display = 'none';
+          }, 1000);
+        }, 1000);
+      }
+    });
+
+
+    setTimeout(() => {
+      if (loadingScreen.style.display === 'flex') {
+        loadingScreen.style.opacity = '0';
+        setTimeout(() => {
+          loadingScreen.style.display = 'none';
+        }, 1000);
+      }
+    }, 5000);
+
+
+    function isCurrentPage(href) {
+      return window.location.pathname.endsWith(href);
+    }
+
+  </script>
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const sideNav = document.getElementById('sideNav');
+    const navOverlay = document.getElementById('navOverlay');
+
+    menuButton.addEventListener('click', () => {
+      sideNav.classList.add('open');
+      navOverlay.classList.add('active');
+    });
+
+    navOverlay.addEventListener('click', () => {
+      sideNav.classList.remove('open');
+      navOverlay.classList.remove('active');
+    });
+  </script>
+
+</body>
+
+
+
+
+</html>
