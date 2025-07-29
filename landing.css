@@ -3,6 +3,8 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  
+  
 }
 
 html {
@@ -713,7 +715,7 @@ html::-webkit-scrollbar {
 .nav-links li a:hover {
   color: #dba576;
   text-decoration: underline;
-  text-shadow: 0 12px 40px 0 #7c7980, 0 4px 16px #71706c;
+  text-shadow: 0 12px 40px #7c7980, 0 4px 16px #71706c;
 }
 
 .trailer-video {
@@ -896,7 +898,7 @@ html::-webkit-scrollbar {
   }
 
   .landing-content-inner {
-    font-size: vw;
+    font-size: 0px;
     letter-spacing: 0.5em;
   }
 
@@ -1175,7 +1177,6 @@ ul {
 
 .code-red-title {
   font-family: "Noto Serif", serif;
-  font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
   font-variation-settings: "wdth" 100;
