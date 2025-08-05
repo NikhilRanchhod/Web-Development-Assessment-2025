@@ -48,25 +48,27 @@
       </div>
     </div>
 
-    <!-- adds menu bar for users to go to other pages -->
-    <!-- adds menu bar for users to go to other pages -->
+  
 
     <nav class="navbar">
 
       <div class="menu-corner">
         <div class="background" id="menuButton">
-          <div class="menu__icon">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div class="menu-tooltip">Menu</div>
+            <div class="menu__icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
       </div>
 
     </nav>
 
     <nav class="side-nav" id="sideNav">
+      <div class="close__icon" id="closeNav">
+        <span class="close-bar"></span>
+        <span class="close-bar"></span>
+      </div>
       <ul>
         <li><a href="index.html"><i class="fas fa-house"></i> Index</a></li>
         <li><a href="Traillerpage.html"><i class="fas fa-film"></i> Trailer</a></li>
@@ -182,16 +184,37 @@
     const menuButton = document.getElementById('menuButton');
     const sideNav = document.getElementById('sideNav');
     const navOverlay = document.getElementById('navOverlay');
+    const closeNav = document.getElementById('closeNav');
 
     menuButton.addEventListener('click', () => {
-      sideNav.classList.add('open');
-      navOverlay.classList.add('active');
+        sideNav.classList.add('open');
+        navOverlay.classList.add('active');
+    });
+
+    closeNav.addEventListener('click', () => {
+        sideNav.classList.remove('open');
+        navOverlay.classList.remove('active');
     });
 
     navOverlay.addEventListener('click', () => {
-      sideNav.classList.remove('open');
-      navOverlay.classList.remove('active');
+        sideNav.classList.remove('open');
+        navOverlay.classList.remove('active');
     });
+
+    // Add current page link disabling
+    function updateCurrentPageLink() {
+        const currentPage = window.location.pathname.split('/').pop() || 'Traillerpage.html';
+        const links = document.querySelectorAll('.side-nav ul li a');
+        
+        links.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('current-page');
+            }
+        });
+    }
+
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', updateCurrentPageLink);
   </script>
 </body>
 

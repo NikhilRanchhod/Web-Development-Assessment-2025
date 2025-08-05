@@ -26,14 +26,21 @@
   <div class="menu-corner">
     <div class="background" id="menuButton">
       <div class="menu__icon">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
-      <div class="menu-tooltip">Menu</div>
+      <div class="close__icon hidden">
+        <span class="close-bar"></span>
+        <span class="close-bar"></span>
+      </div>
     </div>
   </div>
   <nav class="side-nav" id="sideNav">
+    <div class="close__icon" id="closeNav">
+      <span class="close-bar"></span>
+      <span class="close-bar"></span>
+    </div>
     <ul>
       <li><a href="index.html"><i class="fas fa-house"></i> Index</a></li>
       <li><a href="Traillerpage.html"><i class="fas fa-film"></i> Trailer</a></li>
@@ -58,24 +65,44 @@
           historical settings.</p>
         <div class="team-grid">
           <div class="team-card">
-            <h3>Nikhil</h3>
-            <p>Web designer (front-end)</p>
-            <p class="role">About and pricing pages</p>
+            <div class="card-front">
+              <h3>Nikhil Ranchhod</h3>
+            </div>
+            <div class="card-back">
+              <h3>Nikhil Ranchhod</h3>
+              <p class="role-title">Web Designer</p>
+              <p class="role-desc"> <b>Pages:</b> About, Pricing and Info page</p>
+            </div>
           </div>
           <div class="team-card">
-            <h3>Oscar</h3>
-            <p>Web designer (front-end)</p>
-            <p class="role">Landing and trailer pages</p>
+            <div class="card-front">
+              <h3>Oscar Berryman</h3>
+            </div>
+            <div class="card-back">
+              <h3>Oscar Berryman</h3>
+              <p class="role-title">Web designer</p>
+              <p class="role-desc"> <b>Pages:</b> Landing, trailer and Info page</p>
+            </div>
           </div>
           <div class="team-card">
-            <h3>Matthew</h3>
-            <p>3D Modeler</p>
-            <p class="role">Game assets and props</p>
+            <div class="card-front">
+              <h3>Matthew Holmes</h3>
+            </div>
+            <div class="card-back">
+              <h3>Matthew Holmes</h3>
+              <p class="role-title">3D Modeler</p>
+              <p class="role-desc"><b>Job:</b> Game assets and props</p>
+            </div>
           </div>
           <div class="team-card">
-            <h3>Finlay</h3>
-            <p>3D Modeler</p>
-            <p class="role">Hospital environment</p>
+            <div class="card-front">
+              <h3>Finlay Kirke</h3>
+            </div>
+            <div class="card-back">
+              <h3>Finlay Kirke</h3>
+              <p class="role-title">3D Modeler</p>
+              <p class="role-desc"><b>Job:</b> Hospital environment/setting</p>
+            </div>
           </div>
         </div>
       </div>
@@ -249,16 +276,41 @@
     const menuButton = document.getElementById('menuButton');
     const sideNav = document.getElementById('sideNav');
     const navOverlay = document.getElementById('navOverlay');
+    const closeNav = document.getElementById('closeNav');
 
     menuButton.addEventListener('click', () => {
       sideNav.classList.add('open');
       navOverlay.classList.add('active');
     });
 
+    closeNav.addEventListener('click', () => {
+      sideNav.classList.remove('open');
+      navOverlay.classList.remove('active');
+    });
+
+    // ...existing code...
     navOverlay.addEventListener('click', () => {
       sideNav.classList.remove('open');
       navOverlay.classList.remove('active');
     });
+
+    // Add current page link disabling
+    function updateCurrentPageLink() {
+      const currentPage = window.location.pathname.split('/').pop() || 'Traillerpage.html';
+      const links = document.querySelectorAll('.side-nav ul li a');
+
+      links.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('current-page');
+        }
+      });
+    }
+
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', updateCurrentPageLink);
+  </script>
+
+
   </script>
 
 </body>

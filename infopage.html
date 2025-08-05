@@ -31,48 +31,42 @@
             <img src="glassjarshot.jpg" alt="Image 1">
             <div class="image-info">
               <span class="numberText">1/6:</span>
-              <span class="Caption">Mystery Liquid Glass Jar</span>
-              <span class="productionDate">1976/1/1</span>
+              <span class="Caption">"Mystery Liquid Glass Jar"</span>
             </div>
           </div>
           <div class="mySlides fade">
             <img src="redlightshot.jpg" alt="Image 2">
             <div class="image-info">
-              <span class="numberText">2/6</span>
+              <span class="numberText">2/6:</span>
               <span class="Caption">"CODE RED LIGHT"</span>
-              <span class="productionDate">1976/5/15</span>
             </div>
           </div>
           <div class="mySlides fade">
             <img src="hospitalbedshot.jpg" alt="Image 3">
             <div class="image-info">
-              <span class="numberText">3/6</span>
-              <span class="Caption">Death Bed</span>
-              <span class="productionDate">1976/3/10</span>
+              <span class="numberText">3/6:</span>
+              <span class="Caption">"Death Bed"</span>
             </div>
           </div>
           <div class="mySlides fade">
             <img src="tableshot.jpg" alt="Image 4">
             <div class="image-info">
-              <span class="numberText">4/6</span>
-              <span class="Caption">Supply Tray</span>
-              <span class="productionDate">1976/7/20</span>
+              <span class="numberText">4/6:</span>
+              <span class="Caption">"Supply Tray"</span>
             </div>
           </div>
           <div class="mySlides fade">
             <img src="scalpelshot.jpg" alt="Image 5">
             <div class="image-info">
-              <span class="numberText">5/6</span>
-              <span class="Caption">Surgery</span>
-              <span class="productionDate">1976/2/14</span>
+              <span class="numberText">5/6:</span>
+              <span class="Caption">"Surgery"</span>
             </div>
           </div>
           <div class="mySlides fade">
             <img src="lowshotofglassjars.jpg" alt="Image 6">
             <div class="image-info">
-              <span class="numberText">6/6</span>
-              <span class="Caption">Jail Break</span>
-              <span class="productionDate">1976/8/30</span>
+              <span class="numberText">6/6:</span>
+              <span class="Caption">"Jail Break"</span>
             </div>
           </div>
           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -92,15 +86,21 @@
   </div>
 
   <!-- adds menu bar for users to go to other pages -->
-  <div class="menu-corner" id="menuButton">
-    <div class="menu__icon">
-      <span></span>
-      <span></span>
-      <span></span>
+  <div class="menu-corner">
+    <div class="background" id="menuButton">
+      <div class="menu__icon">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
     </div>
-    <div class="menu-tooltip">Menu</div>
   </div>
+
   <nav class="side-nav" id="sideNav">
+    <div class="close__icon" id="closeNav">
+      <span class="close-bar"></span>
+      <span class="close-bar"></span>
+    </div>
     <ul>
       <li><a href="index.html"><i class="fas fa-house"></i> Index</a></li>
       <li><a href="Traillerpage.html"><i class="fas fa-film"></i> Trailer</a></li>
@@ -296,16 +296,44 @@
     const menuButton = document.getElementById('menuButton');
     const sideNav = document.getElementById('sideNav');
     const navOverlay = document.getElementById('navOverlay');
+    const closeNav = document.getElementById('closeNav');
 
     menuButton.addEventListener('click', () => {
       sideNav.classList.add('open');
       navOverlay.classList.add('active');
     });
 
+    closeNav.addEventListener('click', () => {
+      sideNav.classList.remove('open');
+      navOverlay.classList.remove('active');
+    });
+
     navOverlay.addEventListener('click', () => {
       sideNav.classList.remove('open');
       navOverlay.classList.remove('active');
     });
+
+    // ...existing code...
+    navOverlay.addEventListener('click', () => {
+      sideNav.classList.remove('open');
+      navOverlay.classList.remove('active');
+    });
+
+    // Add current page link disabling
+    function updateCurrentPageLink() {
+      const currentPage = window.location.pathname.split('/').pop() || 'Traillerpage.html';
+      const links = document.querySelectorAll('.side-nav ul li a');
+
+      links.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('current-page');
+        }
+      });
+    }
+
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', updateCurrentPageLink);
+  </script>
   </script>
 
   <script>

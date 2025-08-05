@@ -36,14 +36,18 @@
   <div class="menu-corner">
     <div class="background" id="menuButton">
       <div class="menu__icon">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
-      <div class="menu-tooltip">Menu</div>
     </div>
   </div>
+
   <nav class="side-nav" id="sideNav">
+    <div class="close__icon" id="closeNav">
+      <span class="close-bar"></span>
+      <span class="close-bar"></span>
+    </div>
     <ul>
       <li><a href="index.html"><i class="fas fa-house"></i> Index</a></li>
       <li><a href="Traillerpage.html"><i class="fas fa-film"></i> Trailer</a></li>
@@ -64,24 +68,40 @@
         <p class="pricing-intro">We offer a range of editions to suit different preferences and budgets.</p>
         <div class="pricing-grid">
           <div class="pricing-card">
-            <h3>Standard Edition</h3>
-            <p>$25.99</p>
-            <p class="plan">Most popular Edition</p>
+            <div class="card-front">
+              <h3>Standard Edition</h3>
+            </div>
+            <div class="card-back">
+              <p class="price">$25.99</p>
+              <p class="plan">Most popular Edition</p>
+            </div>
           </div>
           <div class="pricing-card">
-            <h3>Premium Edition</h3>
-            <p>$30.99</p>
-            <p class="plan">Upgraded resolution, enhanced textures</p>
+            <div class="card-front">
+              <h3>Premium Edition</h3>
+            </div>
+            <div class="card-back">
+              <p class="price">$30.99</p>
+              <p class="plan">Upgraded resolution, enhanced textures</p>
+            </div>
           </div>
           <div class="pricing-card">
-            <h3>Ultimate Edition</h3>
-            <p>$35.99</p>
-            <p class="plan">All assets included</p>
+            <div class="card-front">
+              <h3>Ultimate Edition</h3>
+            </div>
+            <div class="card-back">
+              <p class="price">$35.99</p>
+              <p class="plan">All assets included</p>
+            </div>
           </div>
           <div class="pricing-card">
-            <h3>Editors Cut</h3>
-            <p>$40.99</p>
-            <p class="plan">Extras included</p>
+            <div class="card-front">
+              <h3>Editors Cut</h3>
+            </div>
+            <div class="card-back">
+              <p class="price">$40.99</p>
+              <p class="plan">Extras included</p>
+            </div>
           </div>
         </div>
       </div>
@@ -158,6 +178,20 @@
     function isCurrentPage(href) {
       return window.location.pathname.endsWith(href);
     }
+
+    function updateCurrentPageLink() {
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      const links = document.querySelectorAll('.side-nav ul li a');
+
+      links.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('current-page');
+          link.style.cursor = 'not-allowed';
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', updateCurrentPageLink);
   </script>
   <canvas id="bg-canvas"
     style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;pointer-events:none;"></canvas>
@@ -262,6 +296,7 @@
     const menuButton = document.getElementById('menuButton');
     const sideNav = document.getElementById('sideNav');
     const navOverlay = document.getElementById('navOverlay');
+    const closeNav = document.getElementById('closeNav');
 
     menuButton.addEventListener('click', () => {
       sideNav.classList.add('open');
@@ -269,6 +304,11 @@
     });
 
     navOverlay.addEventListener('click', () => {
+      sideNav.classList.remove('open');
+      navOverlay.classList.remove('active');
+    });
+
+    closeNav.addEventListener('click', () => {
       sideNav.classList.remove('open');
       navOverlay.classList.remove('active');
     });
