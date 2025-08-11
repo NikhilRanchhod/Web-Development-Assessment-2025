@@ -188,7 +188,7 @@
     }
     window.addEventListener('resize', resize);
 
-    // Fog particles
+    // fog particles
     const fogs = [];
     for (let i = 0; i < 20; i++) {
       fogs.push({
@@ -201,7 +201,7 @@
       });
     }
 
-    // Red light 
+    // red light 
     const redLight = {
       x: window.innerWidth * 0.8,
       y: window.innerHeight * 0.2,
@@ -213,15 +213,15 @@
       redLight.y = canvas.height * 0.2;
     }
 
-    // Flashing effect
+    // flashing effect
     let time = 0;
     function drawRedLight() {
-      // Pulsing effect
-      const pulse = (Math.sin(time) + 1) / 2; // 0 to 1
-      const flickerAlpha = 0.18 + pulse * 0.32; // Range: 0.18 (dim) to 0.50 (bright)
+      // pulsing effect
+      const pulse = (Math.sin(time) + 1) / 2;
+      const flickerAlpha = 0.18 + pulse * 0.32;
       const flickerRadius = redLight.radius + (Math.random() - 0.5) * 6;
 
-      // Bloom effect
+      // bloom effect
       for (let i = 3; i >= 1; i--) {
         const bloomRadius = flickerRadius * (1 + i * 0.25);
         const bloomAlpha = flickerAlpha * (0.18 * i);
@@ -290,13 +290,13 @@
       navOverlay.classList.remove('active');
     });
 
-    // ...existing code...
+
     navOverlay.addEventListener('click', () => {
       sideNav.classList.remove('open');
       navOverlay.classList.remove('active');
     });
 
-    // Add current page link disabling
+    // add current page link disabling
     function updateCurrentPageLink() {
       const currentPage = window.location.pathname.split('/').pop() || 'Traillerpage.html';
       const links = document.querySelectorAll('.side-nav ul li a');
@@ -308,12 +308,12 @@
       });
     }
 
-    // Initialize when DOM is loaded
+
     document.addEventListener('DOMContentLoaded', updateCurrentPageLink);
   </script>
 
 
-  </script>
+
 
 </body>
 

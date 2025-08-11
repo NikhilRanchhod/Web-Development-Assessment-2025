@@ -123,8 +123,8 @@
     let time = 0;
     function drawRedLight() {
       // Pulsing effect
-      const pulse = (Math.sin(time) + 1) / 2; // 0 to 1
-      const flickerAlpha = 0.18 + pulse * 0.32; // Range: 0.18 (dim) to 0.50 (bright)
+      const pulse = (Math.sin(time) + 1) / 2;
+      const flickerAlpha = 0.18 + pulse * 0.32;
       const flickerRadius = redLight.radius + (Math.random() - 0.5) * 6;
 
       // Bloom effect

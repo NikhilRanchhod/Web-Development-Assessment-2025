@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Feedback</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="landing.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="landing.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
 </head>
@@ -33,6 +33,8 @@
       <span class="close-bar"></span>
     </div>
     <ul>
+
+      <!-- adds menu bar for users to go to other pages -->
       <li><a href="index.html"><i class="fas fa-house"></i> Index</a></li>
       <li><a href="Traillerpage.html"><i class="fas fa-film"></i> Trailer</a></li>
       <li><a href="aboutus.html"><i class="fas fa-users"></i> About</a></li>
@@ -46,28 +48,32 @@
   <div class="nav-overlay" id="navOverlay"></div>
 
   <div class="feedbacktitle">We Would love to get your Feedback!</div>
-  <div class="feedbacksub">If you could. Could you fill this form out to give us feedback about my website.<br> This will only take a small bit of your time, but with this feedback I could improve my website to users preferences. </div>
+  <div class="feedbacksub">If you could. Could you fill this form out to give us feedback about my website.<br> This
+    will only take a small bit of your time, but with this feedback I could improve my website to users preferences.
+  </div>
 
   <div class="feedbackform">
-<div class="formboarder"></div>
+    <div class="formboarder"></div>
     <form id="comsciform">
       <div class="name">
-        <label for="name">Your Name:<br></label><br/>
-        <input type="text" id="name" name="name" required size="30"/>
+        <label for="name">Your Name:<br></label><br>
+        <input type="text" id="name" name="name" required size="30">
       </div>
 
-      <br />
+      <br>
 
       <div class="feedback">
-        <label for="message">Your Feedback.<br> What did you like about my website and what could I improve?<br></label><br/>
+        <label for="message">Your Feedback.<br> What did you like about my website and what could I
+          improve?<br></label><br>
         <textarea id="message" name="message" rows="7" cols="60" required></textarea>
       </div>
 
-      <br />
+      <br>
 
-    <div class="question">What would you rate my website beased on user friendliness on a scale from 1-5? <br>(1= bad to 5= Very Good)</div>
+      <div class="question">What would you rate my website beased on user friendliness on a scale from 1-5? <br>(1= bad
+        to 5= Very Good)</div>
       <div class="rating">
-        <input type="radio" id="star5" name="rate" value="5" />
+        <input type="radio" id="star5" name="rate" value="5">
         <label title="Excellent!" for="star5">
           <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
             <path
@@ -76,7 +82,7 @@
           </svg>
         </label>
 
-        <input value="4" name="rate" id="star4" type="radio" />
+        <input value="4" name="rate" id="star4" type="radio">
         <label title="Great!" for="star4">
           <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
             <path
@@ -85,7 +91,7 @@
           </svg>
         </label>
 
-        <input value="3" name="rate" id="star3" type="radio" />
+        <input value="3" name="rate" id="star3" type="radio">
         <label title="Good" for="star3">
           <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
             <path
@@ -94,7 +100,7 @@
           </svg>
         </label>
 
-        <input value="2" name="rate" id="star2" type="radio" />
+        <input value="2" name="rate" id="star2" type="radio">
         <label title="Okay" for="star2">
           <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
             <path
@@ -103,7 +109,7 @@
           </svg>
         </label>
 
-        <input value="1" name="rate" id="star1" type="radio" />
+        <input value="1" name="rate" id="star1" type="radio">
         <label title="Bad" for="star1">
           <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
             <path
@@ -113,19 +119,21 @@
         </label>
       </div>
 
-      <br/>
+      <br>
       <div class="button">
         <button type="submit">Submit Feedback</button>
         <p id="status" style="margin-top:10px; color:green;"></p>
+      </div>
     </form>
   </div>
-</div>
-  
+
+
 
 
   <canvas id="bg-canvas"></canvas>
 
-  
+
+
   <script>
     const form = document.getElementById('comsciform');
     const status = document.getElementById('status');
@@ -157,7 +165,7 @@
   </script>
 
 
-  
+
   <script>
     const canvas = document.getElementById('bg-canvas');
     const ctx = canvas.getContext('2d');
@@ -249,7 +257,7 @@
     animate();
   </script>
 
-  <!-- ⭐ NAVBAR SCRIPT ⭐ -->
+
   <script>
     const menuButton = document.getElementById('menuButton');
     const sideNav = document.getElementById('sideNav');
