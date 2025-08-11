@@ -37,10 +37,9 @@
         <h1 class="trailer-title" style="color: rgba(217, 0, 0, 0.741);"> "Code Red" </h1>
         <p class="trailer-text">Trailer</p>
         <div class="trailer-video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/hdbM6ekEQzY" title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
+          <video width="560" height="315" controls>
+            <source src="Fullsceneanimation0001-0750.mkv" type="video/mp4">
+          </video>
 
         </div>
         <div class="trailer-content-sub">Watch our gripping trailer "Code Red". Set in Soviet Russia, in a time of
@@ -48,17 +47,17 @@
       </div>
     </div>
 
-  
+
 
     <nav class="navbar">
 
       <div class="menu-corner">
         <div class="background" id="menuButton">
-            <div class="menu__icon">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+          <div class="menu__icon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
         </div>
       </div>
 
@@ -75,6 +74,8 @@
         <li><a href="aboutus.html"><i class="fas fa-users"></i> About</a></li>
         <li><a href="pricing.html"><i class="fas fa-tags"></i> Pricing</a></li>
         <li><a href="infopage.html"><i class="fas fa-circle-info"></i> Info</a></li>
+        <li><a href="qrcodepage.html"><i class="fas fa-qrcode"></i> QR Code</a></li>
+        <li><a href="Feedback.html"><i class="fas fa-comment"></i> Feedback</a></li>
       </ul>
     </nav>
 
@@ -187,30 +188,30 @@
     const closeNav = document.getElementById('closeNav');
 
     menuButton.addEventListener('click', () => {
-        sideNav.classList.add('open');
-        navOverlay.classList.add('active');
+      sideNav.classList.add('open');
+      navOverlay.classList.add('active');
     });
 
     closeNav.addEventListener('click', () => {
-        sideNav.classList.remove('open');
-        navOverlay.classList.remove('active');
+      sideNav.classList.remove('open');
+      navOverlay.classList.remove('active');
     });
 
     navOverlay.addEventListener('click', () => {
-        sideNav.classList.remove('open');
-        navOverlay.classList.remove('active');
+      sideNav.classList.remove('open');
+      navOverlay.classList.remove('active');
     });
 
     // Add current page link disabling
     function updateCurrentPageLink() {
-        const currentPage = window.location.pathname.split('/').pop() || 'Traillerpage.html';
-        const links = document.querySelectorAll('.side-nav ul li a');
-        
-        links.forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
-                link.classList.add('current-page');
-            }
-        });
+      const currentPage = window.location.pathname.split('/').pop() || 'Traillerpage.html';
+      const links = document.querySelectorAll('.side-nav ul li a');
+
+      links.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('current-page');
+        }
+      });
     }
 
     // Initialize when DOM is loaded
