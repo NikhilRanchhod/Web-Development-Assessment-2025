@@ -145,6 +145,7 @@ html::-webkit-scrollbar {
   transition: transform 0.6s;
   perspective: 1000px;
   cursor: pointer;
+  margin-top: -90rem;
 }
 
 .card-front,
@@ -391,7 +392,7 @@ html::-webkit-scrollbar {
   align-items: center;
   text-align: center;
   font-family: 'Cinzel', serif;
-  padding-top: 120px;
+  margin-top: -100px;
 }
 
 .aboutus-content {
@@ -508,6 +509,7 @@ html::-webkit-scrollbar {
     2px 2px 8px #100D04,
     0 0 2px #575945;
   animation: flicker 2.5s infinite alternate;
+  margin-top: -4rem;
 }
 
 /*flicker the shadow behind the text*/
@@ -815,6 +817,7 @@ html::-webkit-scrollbar {
   transition: transform 0.6s;
   perspective: 1000px;
   cursor: pointer;
+  margin-top: -100px;
 }
 
 .team-card .card-front,
@@ -986,7 +989,26 @@ html::-webkit-scrollbar {
     margin: 1rem;
     letter-spacing: 0.1em;
   }
+
+  .formboarder {
+  border: 1px solid #A6886D;
+  padding: 0px;
+  border-radius: 10px;
+  height: 530px;
+  width: 90%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: -515px;
+  margin-left: 0px;
+  box-shadow:
+    0 0 10px #A6886D,
+    0 0 20px #40251C,
+    2px 2px 8px #100D04,
+    0 0 2px #575945;
 }
+
+
+}
+
 
 .navbar {
   position: fixed;
