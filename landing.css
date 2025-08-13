@@ -866,151 +866,6 @@ html::-webkit-scrollbar {
   text-shadow: 0 0 8px rgba(219, 165, 118, 0.5);
 }
 
-@media screen and (max-width: 1200px) {
-  .landing {
-    font-size: 10vw;
-  }
-
-  .landing-content-inner {
-    font-size: 5vw;
-  }
-
-  .landing-content-sub {
-    font-size: 3vw;
-  }
-
-  .nav-links li a {
-    font-size: 1.8vw;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .landing {
-    font-size: 11vw;
-    letter-spacing: 0.15em;
-  }
-
-  .landing-content-inner {
-    font-size: 5vw;
-    letter-spacing: 0.1em;
-  }
-
-  .landing-content-sub {
-    font-size: 4vw;
-    letter-spacing: 0.2em;
-  }
-
-  .nav-links li a {
-    font-size: 2.5vw;
-    padding: 8px 12px;
-  }
-
-  .trailer-video {
-    width: 90vw;
-  }
-
-  .pricing-cards {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .price-card {
-    width: 80%;
-    max-width: 300px;
-  }
-
-  .team-section {
-    margin: 20px;
-    padding: 15px;
-  }
-
-  .aboutus {
-    padding-top: 100px;
-  }
-
-  .aboutus-content-inner {
-    font-size: 5vw;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .aboutus-content-sub {
-    font-size: 2.5vw;
-    margin: 1rem 2rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .landing {
-    font-size: 9vw;
-    letter-spacing: 0.1em;
-  }
-
-  .landing-content-inner {
-    font-size: 0px;
-    letter-spacing: 0.5em;
-  }
-
-  .landing-content-sub {
-    font-size: 5vw;
-    letter-spacing: 0.1em;
-    top: 10px;
-  }
-
-  .nav-links li a {
-    font-size: 3.5vw;
-    padding: 5px 8px;
-  }
-
-  .navbar {
-    bottom: 950px;
-  }
-
-  .features {
-    grid-template-columns: 1fr;
-  }
-
-  .pricing-content-sub {
-    font-size: 3vw;
-    margin: 10px 20px;
-  }
-
-  .aboutus-content-sub {
-    font-size: 3vw;
-    margin: 10px 20px;
-  }
-
-  .aboutus-content-inner {
-    font-size: 6vw;
-  }
-
-  .aboutus-content-sub {
-    font-size: 3.5vw;
-    margin: 1rem;
-    letter-spacing: 0.1em;
-  }
-
-  .formboarder {
-  border: 1px solid #A6886D;
-  padding: 0px;
-  border-radius: 10px;
-  height: 530px;
-  width: 90%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: -515px;
-  margin-left: 0px;
-  box-shadow:
-    0 0 10px #A6886D,
-    0 0 20px #40251C,
-    2px 2px 8px #100D04,
-    0 0 2px #575945;
-}
-
-
-}
-
-
 .navbar {
   position: fixed;
   top: 0;
@@ -1049,7 +904,6 @@ html::-webkit-scrollbar {
   align-items: center;
   text-align: center;
   font-size: 2vw;
-
   padding: 40px 0;
 }
 
@@ -1092,18 +946,50 @@ html::-webkit-scrollbar {
   text-align: center;
   font-family: 'Cinzel', serif;
   text-shadow: #40251C 4px 4px 5px;
+  text-shadow:
+    0 0 10px #885931,
+    0 0 20px #40251C,
+    2px 2px 8px #100D04,
+    0 0 2px #575945;
+}
+
+.Caption {
+  text-shadow:
+    0 0 10px #885931,
+    0 0 20px #40251C,
+    2px 2px 8px #100D04,
+    0 0 2px #575945;
+}
+
+.numberText {
+  text-shadow:
+    0 0 10px #885931,
+    0 0 20px #40251C,
+    2px 2px 8px #100D04,
+    0 0 2px #575945;
 }
 
 .info-title {
   font-size: 251%;
   margin-top: -0.1px;
   text-align: center;
+  text-shadow:
+    0 0 10px #885931,
+    0 0 20px #40251C,
+    2px 2px 8px #100D04,
+    0 0 2px #575945;
 }
 
 .info-subheading {
   font-size: 20px;
   margin-bottom: 10px;
   color: #dba576;
+  text-shadow:
+    0 0 10px #885931,
+    0 0 20px #40251C,
+    2px 2px 8px #100D04,
+    0 0 2px #575945;
+
 }
 
 .trailer-title {
@@ -1121,7 +1007,7 @@ html::-webkit-scrollbar {
     2px 2px 8px #100D04,
     0 0 2px #575945;
   animation: flicker 2.5s infinite alternate;
-  margin-top: 50px;
+  margin-top: -50px;
 }
 
 
@@ -1730,16 +1616,13 @@ button {
 }
 
 .qrcode {
-
   margin-left: 400px;
-  margin-top: 50px;
-
-
+  margin-top: -10px;
 }
 
 .qrcode img {
   border: 5px solid #000;
-  padding: 50px;
+  padding: 30px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
@@ -1763,14 +1646,10 @@ button {
     2px 2px 8px #100D04,
     0 0 2px #575945;
   animation: flicker 2.5s infinite alternate;
-  margin-top: 70px;
+  margin-top: 30px;
   margin-left: 50px;
 
 }
-
-@media only screen and (max-width: 768px) {}
-
-
 
 .formname {
   margin-left: 250px;
@@ -1789,25 +1668,27 @@ button {
   margin-left: 200px;
   margin-top: 100px;
 }
+
 /* Chrome, Safari */
 body::-webkit-scrollbar {
   display: none;
 }
- 
+
 /* Firefox */
 body {
   scrollbar-width: none;
 }
- 
- 
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden;
-    /* Remove forced overflow-y, let browser handle vertical scroll naturally */
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  /* Remove forced overflow-y, let browser handle vertical scroll naturally */
 }
- 
+
 
 .rating>label {
   margin-right: 30px;
@@ -1992,4 +1873,148 @@ textarea {
   margin-top: -30px;
 
 
+}
+
+@media only screen and (max-width: 768px) {}
+
+@media screen and (max-width: 1200px) {
+  .landing {
+    font-size: 10vw;
+  }
+
+  .landing-content-inner {
+    font-size: 5vw;
+  }
+
+  .landing-content-sub {
+    font-size: 3vw;
+  }
+
+  .nav-links li a {
+    font-size: 1.8vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .landing {
+    font-size: 11vw;
+    letter-spacing: 0.15em;
+  }
+
+  .landing-content-inner {
+    font-size: 5vw;
+    letter-spacing: 0.1em;
+  }
+
+  .landing-content-sub {
+    font-size: 4vw;
+    letter-spacing: 0.2em;
+  }
+
+  .nav-links li a {
+    font-size: 2.5vw;
+    padding: 8px 12px;
+  }
+
+  .trailer-video {
+    width: 90vw;
+  }
+
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .price-card {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .team-section {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .aboutus {
+    padding-top: 100px;
+  }
+
+  .aboutus-content-inner {
+    font-size: 5vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .aboutus-content-sub {
+    font-size: 2.5vw;
+    margin: 1rem 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .landing {
+    font-size: 9vw;
+    letter-spacing: 0.1em;
+  }
+
+  .landing-content-inner {
+    font-size: 0px;
+    letter-spacing: 0.5em;
+  }
+
+  .landing-content-sub {
+    font-size: 5vw;
+    letter-spacing: 0.1em;
+    top: 10px;
+  }
+
+  .nav-links li a {
+    font-size: 3.5vw;
+    padding: 5px 8px;
+  }
+
+  .navbar {
+    bottom: 950px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-content-sub {
+    font-size: 3vw;
+    margin: 10px 20px;
+  }
+
+  .aboutus-content-sub {
+    font-size: 3vw;
+    margin: 10px 20px;
+  }
+
+  .aboutus-content-inner {
+    font-size: 6vw;
+  }
+
+  .aboutus-content-sub {
+    font-size: 3.5vw;
+    margin: 1rem;
+    letter-spacing: 0.1em;
+  }
+
+  .formboarder {
+    border: 1px solid #A6886D;
+    padding: 0px;
+    border-radius: 10px;
+    height: 530px;
+    width: 90%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: -515px;
+    margin-left: 0px;
+    box-shadow:
+      0 0 10px #A6886D,
+      0 0 20px #40251C,
+      2px 2px 8px #100D04,
+      0 0 2px #575945;
+  }
 }
