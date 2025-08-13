@@ -145,7 +145,8 @@ html::-webkit-scrollbar {
   transition: transform 0.6s;
   perspective: 1000px;
   cursor: pointer;
-  margin-top: -90rem;
+  margin-top: -3rem;
+  margin-left: -40px;
 }
 
 .card-front,
@@ -1788,7 +1789,25 @@ button {
   margin-left: 200px;
   margin-top: 100px;
 }
-
+/* Chrome, Safari */
+body::-webkit-scrollbar {
+  display: none;
+}
+ 
+/* Firefox */
+body {
+  scrollbar-width: none;
+}
+ 
+ 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    /* Remove forced overflow-y, let browser handle vertical scroll naturally */
+}
+ 
 
 .rating>label {
   margin-right: 30px;
